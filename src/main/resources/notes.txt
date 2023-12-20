@@ -1,0 +1,27 @@
+1.Compiling - Compile Code
+Command: mvn compile
+Output: This command compiles the source code of the project. Maven looks for the .java files in the src/main/java directory, compiles them, and places the .class files in the target/classes directory.
+
+2. Packaging Executables - Create a .jar, .war, .zip, etc.
+Command: mvn package
+Output: This command takes the compiled code and packages it into a distributable format, such as a JAR or WAR file. In our case, since it's a Spring Boot application, Maven will create an executable JAR file in the target directory (e.g., target/my-maven-project-1.0-SNAPSHOT.jar).
+
+3. Testing - Unit/Functional/Integration Testing
+Command: mvn test
+Output: This command runs the tests that are in the src/test/java directory. Maven uses a test framework (like JUnit) to execute tests and outputs the results, including the number of tests run, the number passed, and any failures.
+
+4. Generating Documentation - Javadoc/Site Generation Capabilities
+Command: mvn javadoc:javadoc
+Output: This command generates Javadoc for the project. Maven creates HTML documentation from your code comments and saves it in target/site/apidocs.
+Additional Command for Site: mvn site
+Output: Generates a project website including documentation generated from the source code, reports, and other project information. The site is generated in the target/site directory.
+
+5. Generating Metrics/Reports - Build Metrics, Test Result Reports
+Command: mvn surefire-report:report
+Output: This command generates a report of the test results. The report includes details of test executions and is saved in the target/site/surefire-report.html file. Note: Make sure you have the Surefire plugin configured in your pom.xml.
+
+6. Deploying - Push to Repository or to Server
+Command: mvn deploy
+Output: This command is used to deploy the built artifact to a remote repository. For local deployment, you would use mvn install, which installs the artifact into the local Maven repository (~/.m2/repository).
+Note: The mvn deploy command requires a configured repository in the pom.xml file. Without proper configuration, this command will fail.
+ 
